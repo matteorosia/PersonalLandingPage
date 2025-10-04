@@ -1,16 +1,24 @@
-export default function ExplorerItem({ id, title, isfile, tab, onClick }) {
+export default function ExplorerItem({ id, title, type, tab, onClick }) {
   
     const marginMap = {
         0: "",
         1: "ml-4",
-        2: "ml-8",
-        3: "ml-12",
+        2: "ml-12",
     };
 
     return (
-    <div className="pl-4 text-white text-[14px] hover:bg-neutral-500"  onClick={isfile ? () => onClick(id) : undefined}>
-      <p className={`flex items-center font-mono ${marginMap[tab] || ""}`}>
-        {!isfile && (
+    <div className="pl-4 text-white text-[14px] hover:bg-neutral-500 cursor-pointer"  onClick={type > 0 ? () => onClick(id) : undefined}>
+        <p
+      className={`flex items-center font-mono ${marginMap[tab] || ""} ${
+      type === 1 ? "text-blue-200" 
+      : type === 2  ? "text-red-200" 
+      : type === 3  ? "text-purple-200" 
+      : type === 4  ? "text-yellow-200" 
+      : type === 5  ? "text-orange-200" 
+      : "text-green-200 "
+    }`}>
+
+        {type === 0 && (
             <svg
                 className="w-2 h-2 text-gray-800 dark:text-white inline mr-2"
                 aria-hidden="true"

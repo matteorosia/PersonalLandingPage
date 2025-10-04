@@ -1,0 +1,6 @@
+<color='green'>//Why would you like to close the window? Are the content not interested enough?? :)</color>
+
+
+<color='purple'>for</color><color='orange'>(</color><color='blue'>var </color><color='light-blue'>i</color>=<color='yellow'>0</color>; <color='light-blue'>i</color><<color='yellow'>1000</color>; <color='light-blue'>i</color>++<color='orange'>)</color><color='orange'>{</color>
+    <color='light-blue'>console</color>.<color='yellow'>log</color><color='purple'>(</color><color='orange'>"TODO: Remember to make the app more interesting lmao :D"</color><color='purple'>)</color>;
+<color='orange'>}</color>

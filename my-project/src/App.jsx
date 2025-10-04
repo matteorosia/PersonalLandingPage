@@ -2,6 +2,16 @@ import { useState } from "react";
 import ExplorerItem from "./components/ExplorerItem";
 import CodeSection from "./components/CodeSection";
 import CodeSectionTab from "./components/CodeSectionTab";
+import SearchBar from "./components/SearchBar";
+
+//Image import
+import icon1 from "./assets/icon1.png";
+import icon2 from "./assets/icon2.png";
+import icon3 from "./assets/icon3.png";
+import icon4 from "./assets/icon4.png";
+import icon5 from "./assets/icon5.png";
+import icon6 from "./assets/icon6.png";
+
 
 export default function App() {
 
@@ -11,31 +21,68 @@ export default function App() {
   function handleClick(id) {
       setFilePath("/pages/" + id + ".txt"); 
       setFile(id + ".jsx");
-      console.log(id + ".jsx");
+  }
+
+  function handleCloseWindow(){
+    setFilePath("/pages/Close.txt"); 
+    setFile("close.jsx");
   }
 
   return (
     <div className="h-screen flex">
       <div className="bg-amber-100 m-8 rounded-[5px] w-full flex flex-col overflow-hidden">
-        <div className="w-full h-[50px] bg-neutral-900 border-b-1 border-neutral-600 flex justify-center items-center">
-          <div className="bg-neutral-800 w-[400px] h-[30px] rounded-sm border-1 border-neutral-600 font-mono flex justify-center items-center text-white text-[10px]">Matteo Rosia | Personal Page</div>
+        
+        <div className="w-full h-[50px] bg-neutral-900 border-b border-neutral-600 flex items-center px-4 relative">
+  
+        <div className="flex gap-2 absolute left-4">
+          <div className="rounded-full h-[20px] w-[20px] bg-red-500" onClick={handleCloseWindow}></div>
+          <div className="rounded-full h-[20px] w-[20px] bg-yellow-400"></div>
+          <div className="rounded-full h-[20px] w-[20px] bg-green-600"></div>
         </div>
+
+        {/* Barra al centro */}
+        <div className="mx-auto">
+          <SearchBar content="Matteo Rosia | Personal Page" />
+        </div>
+      </div>
 
 
         <div className="flex h-full">
-          <div className="h-full w-[100px] bg-neutral-900 border-r-1 border-neutral-600"></div>
+
+          {/* Sidebar */}
+          <div className="h-full w-[80px] bg-neutral-900 border-r-1 border-neutral-600 flex flex-col items-center gap-4 py-4">
+              <img src={icon1} alt="icon1" className="w-[30px] h-[30px]" />
+              <img src={icon2} alt="icon2" className="w-[30px] h-[30px]" />
+              <img src={icon3} alt="icon3" className="w-[30px] h-[30px]" />
+              <img src={icon4} alt="icon4" className="w-[30px] h-[30px]" />
+              <img src={icon5} alt="icon5" className="w-[30px] h-[30px]" />
+              <img src={icon6} alt="icon6" className="w-[30px] h-[30px]" />
+          </div>
 
           {/* Explorer*/}
           <div className="h-full w-[400px] bg-neutral-900 border-r-1 border-neutral-600">
             <div className="m-4 text-white font-mono">
               EXPLORER
             </div>
-            <ExplorerItem id="matteo_rosia" title="Matteo Rosia" isfile={false} tab={0} onClick={handleClick}></ExplorerItem>
-            <ExplorerItem id="about_me" title="About me" isfile={false} tab={1} onClick={handleClick}></ExplorerItem>
-            <ExplorerItem id="who_am_I" title="Who_am_I.jsx" isfile={true} tab={2} onClick={handleClick}></ExplorerItem>
-            <ExplorerItem id="skills" title="Skills" isfile={false} tab={1} onClick={handleClick}></ExplorerItem>
-            <ExplorerItem id="soft_skills" title="Soft_skills.jsx" isfile={true} tab={2} onClick={handleClick}></ExplorerItem>
-            <ExplorerItem id="hard_skills" title="Hard_skills.jsx" isfile={true} tab={2} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="Matteo_rosia" title="Matteo Rosia" type={0} tab={0} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="About_me" title="About me" type={0} tab={1} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="Who_am_I" title="Who_am_I.jsx" type={1} tab={2} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="skills" title="Skills" type={0} tab={1} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="Soft_skills" title="Soft_skills.jsx" type={1} tab={2} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="Hard_skills" title="Hard_skills.jsx" type={1} tab={2} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="Work_history" title="Work_history" type={0} tab={1} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="Orange_Pix" title="Orange_pix.jsx" type={1} tab={2} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="Centrico" title="Centrico.jsx" type={1} tab={2} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="Incas_Shaeffer" title="Incas_Shaeffer" type={1} tab={2} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="Education" title="Education" type={0} tab={1} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="ITIS_Q_Sella" title="ITIS_Q.Sella.jsx" type={1} tab={2} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="UNIUPO" title="UNIUPO.jsx" type={1} tab={2} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="Customers" title="Customers" type={0} tab={1} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="Who_I_worked_with" title="Who_I_worked_with.jsx" type={1} tab={2} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="index.html" title="index.html" type={2} tab={0} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="style.css" title="style.css" type={3} tab={0} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="pippo.php" title="pippo.php" type={4} tab={0} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="package.json" title="package.json" type={5} tab={0} onClick={handleClick}></ExplorerItem>
           </div>
 
           {/* Code section */}
