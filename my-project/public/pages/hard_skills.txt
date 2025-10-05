@@ -1,1 +1,18 @@
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+<color='green'>//Author: Matteo Rosia -> Hard Skills List (TODO: Read file Readme.txt)</color>
+
+<color='purple'>export default</color> <color='blue'>function</color> <color='yellow'>HardSkills</color><color='orange'>()</color> <color='yellow'>{</color>
+    <color='purple'>return (</color>
+        <color='blue'><ul></color>
+            <color='blue'><li></color><color='orange'>Excellent knowledge of .NET, Mercurial, REST APIs, ETL and ERP systems</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Excellent knowledge of VB and C#, JavaScript</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Django, React, Bootstrap, TailwindCSS, Flutter and Kotlin (Readme.txt of this webapp)</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Strong knowledge of Java, PHP, C++, Android Studio, Visual studio, Visual studio Code</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Good knowledge of SQL Server and Firebase and data query / db management</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Solid understanding of WMS and logistics</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Jira, Microsoft Teams, and AI as a support tool</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Customer care skills developed through numerous business trips across Italy</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Strong teamwork and problem-solving attitude</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Good knowledge of JavaScript and Bootstrap (gained through personal projects)</color><color='blue'></li></color>
+        <color='blue'></ul></color>
+    <color='purple'>);</color>
+<color='yellow'>}</color>

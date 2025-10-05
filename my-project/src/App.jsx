@@ -21,6 +21,7 @@ export default function App() {
   function handleClick(id) {
       setFilePath("/pages/" + id + ".txt"); 
       setFile(id + ".jsx");
+      console.log("pippo");
   }
 
   function handleCloseWindow(){
@@ -29,8 +30,9 @@ export default function App() {
   }
 
   return (
-    <div className="h-screen flex">
-      <div className="bg-amber-100 m-8 rounded-[5px] w-full flex flex-col overflow-hidden">
+    <>
+    <div className="flex lg:h-screen">
+      <div className="bg-amber-100 lg:m-10 md:m-10 xs:m-10 rounded-[5px] w-full flex flex-col overflow-hidden">
         
         <div className="w-full h-[50px] bg-neutral-900 border-b border-neutral-600 flex items-center px-4 relative">
   
@@ -71,18 +73,15 @@ export default function App() {
             <ExplorerItem id="Soft_skills" title="Soft_skills.jsx" type={1} tab={2} onClick={handleClick}></ExplorerItem>
             <ExplorerItem id="Hard_skills" title="Hard_skills.jsx" type={1} tab={2} onClick={handleClick}></ExplorerItem>
             <ExplorerItem id="Work_history" title="Work_history" type={0} tab={1} onClick={handleClick}></ExplorerItem>
-            <ExplorerItem id="Orange_Pix" title="Orange_pix.jsx" type={1} tab={2} onClick={handleClick}></ExplorerItem>
-            <ExplorerItem id="Centrico" title="Centrico.jsx" type={1} tab={2} onClick={handleClick}></ExplorerItem>
-            <ExplorerItem id="Incas_Shaeffer" title="Incas_Shaeffer" type={1} tab={2} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="Business" title="Business.py" type={1} tab={2} onClick={handleClick}></ExplorerItem>
             <ExplorerItem id="Education" title="Education" type={0} tab={1} onClick={handleClick}></ExplorerItem>
-            <ExplorerItem id="ITIS_Q_Sella" title="ITIS_Q.Sella.jsx" type={1} tab={2} onClick={handleClick}></ExplorerItem>
-            <ExplorerItem id="UNIUPO" title="UNIUPO.jsx" type={1} tab={2} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="Uni_and_others" title="Uni_and_others.jsx" type={1} tab={2} onClick={handleClick}></ExplorerItem>
             <ExplorerItem id="Customers" title="Customers" type={0} tab={1} onClick={handleClick}></ExplorerItem>
             <ExplorerItem id="Who_I_worked_with" title="Who_I_worked_with.jsx" type={1} tab={2} onClick={handleClick}></ExplorerItem>
-            <ExplorerItem id="index.html" title="index.html" type={2} tab={0} onClick={handleClick}></ExplorerItem>
-            <ExplorerItem id="style.css" title="style.css" type={3} tab={0} onClick={handleClick}></ExplorerItem>
-            <ExplorerItem id="pippo.php" title="pippo.php" type={4} tab={0} onClick={handleClick}></ExplorerItem>
-            <ExplorerItem id="package.json" title="package.json" type={5} tab={0} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="index" title="index.html" type={2} tab={0} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="style" title="style.css" type={3} tab={0} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="pippo" title="pippo.php" type={4} tab={0} onClick={handleClick}></ExplorerItem>
+            <ExplorerItem id="readme" title="readme.txt" type={5} tab={0} onClick={handleClick}></ExplorerItem>
           </div>
 
           {/* Code section */}
@@ -91,11 +90,12 @@ export default function App() {
               <CodeSectionTab title={file || "who_am_I.jsx"}></CodeSectionTab>
                <div className="bg-neutral-900 w-full h-[40px] border-b-1 border-neutral-600"></div>
             </div>
-            <CodeSection filePath={filePath || "pages/who_am_I.txt"}></CodeSection>
+            <CodeSection filePath={filePath || "pages/Who_am_I.txt"}></CodeSection>
           </div> 
         </div>
         <div className="w-full h-[40px] bg-neutral-900 border-t-1  border-neutral-600 flex justify-center items-center text-white text-[10px]">All rights are reserved</div>
       </div>
     </div>
+    </>
   )
 }

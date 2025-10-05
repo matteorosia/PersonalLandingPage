@@ -20,7 +20,7 @@ export default function CodeSection({ filePath }) {
     let match;
 
     while ((match = regex.exec(text)) !== null) {
-      const [fullMatch, className, innerText] = match;
+      const [, className, innerText] = match;
 
       // Aggiunge il testo prima del match
       if (match.index > lastIndex) {
@@ -55,7 +55,7 @@ export default function CodeSection({ filePath }) {
   };
 
   return (
-    <div className="p-4 text-white font-mono text-sm whitespace-pre-wrap">
+    <div className="p-4 text-white font-mono lg:text-[14px] sm:text-[9px] whitespace-pre-wrap">
       {renderContent(content)}
     </div>
   );
