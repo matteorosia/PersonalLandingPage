@@ -2,8 +2,9 @@
 import CodeSectionContent from "./CodeSectionContent";
 import CodeSectionTab from "./CodeSectionTab";
 
-export default function CodeSection({file, filePath}) {
+export default function CodeSection({file, filePath, state}) {
     return (
+        state &&
         <div className="h-full w-full bg-neutral-800 flex flex-col">
             <div className="flex">
                 <CodeSectionTab file={file || "Who_am_I.jsx"}></CodeSectionTab>

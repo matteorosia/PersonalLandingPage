@@ -1,9 +1,12 @@
 
 import ExplorerItem from "./ExplorerItem"
 
-export default function Explorer({ onClick }) {
-    return (
-        <div className="h-full w-[400px] bg-neutral-900 border-r-1 border-neutral-600 max-sm:hidden">
+export default function Explorer({state, onClick }) {
+
+  return (
+
+      state && 
+        <div className="h-full max-sm:w-full max-md:w-full bg-neutral-900 border-r-1 border-neutral-600">
             <div className="m-4 text-white font-mono">
               EXPLORER
             </div>
