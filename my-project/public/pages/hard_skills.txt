@@ -4,7 +4,7 @@
     <color='purple'>return (</color>
         <color='blue'><ul></color>
             <color='blue'><li></color><color='orange'>Excellent knowledge of .NET, Mercurial, REST APIs, ETL and ERP systems</color><color='blue'></li></color>
-            <color='blue'><li></color><color='orange'>Excellent knowledge of VB and C#, JavaScript</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Excellent knowledge of C# and Vb and JavaScript</color><color='blue'></li></color>
             <color='blue'><li></color><color='orange'>Django, React, Bootstrap, TailwindCSS, Flutter and Kotlin (Readme.txt of this webapp)</color><color='blue'></li></color>
             <color='blue'><li></color><color='orange'>Strong knowledge of Java, PHP, C++, Android Studio, Visual studio, Visual studio Code</color><color='blue'></li></color>
             <color='blue'><li></color><color='orange'>Good knowledge of SQL Server and Firebase and data query / db management</color><color='blue'></li></color>

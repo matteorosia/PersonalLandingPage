@@ -4,7 +4,7 @@ I graduated from ITIS Q. Sella (BI) in 2019 with full marks (100 cum laude), and
 
 At the end of 2020, I started working as a system administrator at Centrico (now Nivola) while continuing my university studies. 
 
-In 2022, I was hired as a Software Engineer at Incas, Member of SSI SCHÄFER Group, where I currently work as a VB .NET developer. 
+In 2022, I was hired as a Software Engineer at Incas, Member of SSI SCHÄFER Group, where I currently work as a C# .NET developer. 
 
 In December 2023, I graduated with a final grade of 96/110. My goal is now to work abroad or change italian city.
 */</color>
