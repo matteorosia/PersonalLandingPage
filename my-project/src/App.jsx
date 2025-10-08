@@ -29,6 +29,9 @@ export default function App() {
     case "readme":
       f = ".json"
       break;
+    case "version":
+      f = ".txt";
+      break;
     default:
       f = ".jsx";
   }
@@ -94,7 +97,7 @@ console.log(val + f);
             />
           </div>
 
-          <Footer content="All rights are reserved" />
+          <Footer content="October 2025 | All rights reserved" />
         </div>
       </div>
     </>

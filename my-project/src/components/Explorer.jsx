@@ -24,7 +24,8 @@ export default function Explorer({state, onClick }) {
             <ExplorerItem id="Who_I_worked_with" title="Who_I_worked_with.jsx" type={1} tab={2} onClick={onClick}></ExplorerItem>
             <ExplorerItem id="index" title="index.html" type={2} tab={0} onClick={onClick}></ExplorerItem>
             <ExplorerItem id="style" title="style.css" type={3} tab={0} onClick={onClick}></ExplorerItem>
-            <ExplorerItem id="readme" title="readme.json" type={5} tab={0} onClick={onClick}></ExplorerItem>
+            <ExplorerItem id="readme" title="readme.json" type={4} tab={0} onClick={onClick}></ExplorerItem>
+            <ExplorerItem id="version" title="version.txt" type={5} tab={0} onClick={onClick}></ExplorerItem>
           </div>
     );
 }

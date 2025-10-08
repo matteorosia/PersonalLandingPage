@@ -7,7 +7,6 @@
             <color='blue'><li></color><color='orange'>Strong interest in music, with experience in composing and producing music using piano and guitar.</color><color='blue'></li></color>
             <color='blue'><li></color><color='orange'>Enthusiasm for design, particularly web and app design.</color><color='blue'></li></color>
             <color='blue'><li></color><color='orange'>Dedication to personal growth, with a focus on reading and writing.</color><color='blue'></li></color>
-            <color='blue'><li></color><color='orange'>Good knowledge of SQL Server and Firebase and data query / db management</color><color='blue'></li></color>
             <color='blue'><li></color><color='orange'>Other personal interests include motorcycling, mountains, and sports.</color><color='blue'></li></color>
         <color='blue'></ul></color>
     <color='purple'>);</color>

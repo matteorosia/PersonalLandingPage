@@ -1,0 +1,9 @@
+<color='green'>version.txt</color>
+
+<color='yellow'>Here is the version of this web app, with tracked data and comments.</color>
+
+<color='orange'>- v1.0 [5 Of October 2025] Introducing to Personal-cv-ide 
+-> First app version
+-> Published an Ide with links below Explorer section to showing contents in code windows</color>
+
+<color='blue'>TODO: Animation and other buttons management</color>
