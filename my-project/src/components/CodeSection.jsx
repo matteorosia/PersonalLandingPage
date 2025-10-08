@@ -7,10 +7,12 @@ export default function CodeSection({file, filePath, state}) {
         state &&
         <div className="h-full w-full bg-neutral-800 flex flex-col">
             <div className="flex">
-                <CodeSectionTab file={file || "Who_am_I.jsx"}></CodeSectionTab>
-                <div className="bg-neutral-900 w-full h-[40px] border-b-1 border-neutral-600"></div>
+                <CodeSectionTab file={file || "Who_I_am.jsx"}></CodeSectionTab>
+                <div className="bg-neutral-900 w-full h-[40px] border-b border-neutral-600"></div>
             </div>
-            <CodeSectionContent filePath={filePath || "pages/Who_am_I.txt"}></CodeSectionContent>
+            <div class="flex">
+               <CodeSectionContent filePath={filePath || "pages/Who_I_am.txt"}></CodeSectionContent>
+            </div>
       </div> 
     );
 }

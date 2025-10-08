@@ -1,1 +1,24 @@
-<color='green'>TODO: This page is currently in WIP, please pass later :)</color>
+<color='green'>/* style.css */</color>
+
+<color='green'>/* Body genericc styles */</color>
+<color='red'>body</color> <color='purple'>{</color>
+  <color='orange'>margin</color> : <color='yellow'>0</color> ;
+  <color='orange'>font-family</color> : <color='yellow'>Arial, Helvetica, sans-serif</color> ;
+  <color='orange'>background-color</color> : <color='yellow'>#1e1e1e</color> ;
+  <color='orange'>color</color> : <color='yellow'>#f5f5f5</color> ;
+<color='purple'>}</color>
+
+<color='green'>/* Title */</color>
+<color='red'>.pippo</color> <color='purple'>{</color>
+  <color='orange'>font-size</color> : <color='yellow'>32px</color> ;
+  <color='orange'>font-weight</color> : <color='yellow'>bold</color> ;
+  <color='orange'>padding</color> : <color='yellow'>20px</color> ;
+<color='purple'>}</color>
+
+<color='green'>/* Description */</color>
+<color='red'>.pluto</color> <color='purple'>{</color>
+  <color='orange'>font-size</color> : <color='yellow'>24px</color> ;
+  <color='orange'>margin-top</color> : <color='yellow'>4px</color> ;
+  <color='orange'>margin-bottom</color> : <color='yellow'>10px</color> ;
+  <color='orange'>color</color> : <color='yellow'>#ffcc00</color> ;
+<color='purple'>}</color>

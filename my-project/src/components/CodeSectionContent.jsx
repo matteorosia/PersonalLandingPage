@@ -55,11 +55,11 @@ export default function CodeSectionContent({ filePath }) {
   };
 
   return (
-    <div className="flex flex-row">
+    <>
       { /*<div className="h-full w-[40px] bg-neutral-800 text-[14px] text-neutral-500 font-mono p-2 pt-4 flex-1">1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33</div> */ }
-      <div className="p-4 text-white font-mono sm:text-[14px] max-sm:text-[13px] whitespace-pre-wrap">
+      <div className="p-4 text-white font-mono sm:text-[14px] max-sm:text-[13px] whitespace-pre-wrap h-full">
         {renderContent(content)}
       </div>
-    </div>
+    </>
   );
 }

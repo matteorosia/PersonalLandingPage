@@ -7,7 +7,7 @@ export default function ExplorerItem({ id, title, type, tab, onClick }) {
     };
 
     return (
-    <div className="pl-4 text-white text-[14px] hover:bg-neutral-500 active:bg-neutral-500 cursor-pointer"  onClick={type > 0 ? () => onClick(id) : undefined}>
+    <div className="px-4 text-white text-[14px] hover:bg-neutral-500 active:bg-neutral-500 cursor-pointer"  onClick={type > 0 ? () => onClick(id) : undefined}>
         <p
       className={`flex items-center font-mono ${marginMap[tab] || ""} ${
       type === 1 ? "text-blue-200" 

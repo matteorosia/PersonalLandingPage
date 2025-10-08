@@ -12,6 +12,31 @@ export default function App() {
   const [mobileMenuState, setMobileMenuState] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+ function getFileExtension(val) {
+  let f = "";
+    
+  console.log(val);
+  switch (val) {
+    case "index":
+      f = ".html";
+      break;
+    case "style":
+      f = ".css";
+      break;
+    case "pippo":
+      f = ".php";
+      break;
+    case "readme":
+      f = ".json"
+      break;
+    default:
+      f = ".jsx";
+  }
+console.log(val + f);
+  return  val + f;
+}
+
+
   useEffect(() => {
     // funzione che controlla se la finestra è "mobile"
     const checkMobile = () => {
@@ -26,7 +51,7 @@ export default function App() {
 
   function handleClick(id) {
     setFilePath("/pages/" + id + ".txt");
-    setFile(id + ".jsx");
+    setFile(getFileExtension(id));
     setMobileMenuState(!mobileMenuState);
   }
 

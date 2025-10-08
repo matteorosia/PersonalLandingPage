@@ -1,1 +1,25 @@
-<color='green'>TODO: This page is currently in WIP, please pass later :)</color>
+<color='green'>//Author: Matteo Rosia -> Business</color>
+
+<color='purple'>export default</color> <color='blue'>function</color> <color='yellow'>SoftSkills</color><color='orange'>()</color> <color='yellow'>{</color>
+    <color='purple'>return (</color>
+        <>
+            <color='red'><h1></color><color='yellow'>Web Development Intern – Summer 2017, OrangePix, Biella</color><color='red'></h1></color>
+            <color='blue'><ul></color>
+                <color='blue'><li></color><color='orange'>Front-End pages and landing pages</color><color='blue'></li></color>
+                <color='blue'><li></color><color='orange'>Basic Bootstrap knowledge, design and js</color><color='blue'></li></color>
+            <color='blue'></ul></color>
+
+            <color='red'><h1></color><color='yellow'>System Administrator – 12/2020–09/2022, Centrico (CED Sella Bank), Biella<color='red'></color><color='red'></h1></color>
+            <color='blue'><ul></color>
+                <color='blue'><li></color><color='orange'>Windows/Linux server admin, alarm & issue management</color><color='blue'></li></color>
+                <color='blue'><li></color><color='orange'>Process scheduling (Linux shell), certificate maintenance, Jira ticket handling</color><color='blue'></li></color>
+            <color='blue'></ul></color>
+
+            <color='red'><h1></color><color='yellow'>Software Engineer – 09/2022–Present, Incas (SSI SCHAFER Group), Biella</color><color='red'>/h1></color>
+            <color='blue'><ul></color>
+                <color='blue'><li></color><color='orange'>C# and VB .NET & SQL Server development</color><color='blue'></li></color>
+                <color='blue'><li></color><color='orange'>Custom WMS solutions, ERP integration (SAP, AS400, St3k)</color><color='blue'></li></color>
+            <color='blue'></ul></color>
+        </>
+    <color='purple'>);</color>
+<color='yellow'>}</color>

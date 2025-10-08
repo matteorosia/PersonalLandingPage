@@ -1,1 +1,20 @@
-<color='green'>TODO: This page is currently in WIP, please pass later :)</color>
+<color='green'>/*
+* Here you can find a list of customers I worked with at Incas (names are hidden for privacy).
+* At Centrico, I was an internal employee and worked directly with my colleagues.
+*/
+</color>
+
+<color='purple'>export default</color> <color='blue'>function</color> <color='yellow'>HardSkills</color><color='orange'>()</color> <color='yellow'>{</color>
+    <color='purple'>return (</color>
+        <color='blue'><ul></color>
+            <color='blue'><li></color><color='orange'>Bologna – Warehouse for clothing and accessories</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Modena – Warehouse for spare parts and industrial machinery</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Verona – Warehouse for professional products for automotive, craftsmanship, and industry</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Vicenza – Distribution of electrical materials</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Florence – Distribution of electrical materials</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Reggio Emilia – Warehouse for cables and copper reels</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Parsippany-Troy Hills, NJ, USA – Warehouse and distribution hub (North America branch)</color><color='blue'></li></color>
+        <color='blue'></ul></color>
+    <color='purple'>);</color>
+<color='yellow'>}</color>
+

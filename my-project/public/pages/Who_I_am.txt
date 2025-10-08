@@ -1,0 +1,24 @@
+<color='green'>/** 
+ * Author: </color><color='blue'>Matteo Rosia</color><color='green'>
+ *
+ * Welcome to my </color><color='purple'>Personal CV IDE</color><color='green'>!
+ *
+ * I first designed this app in Figma, then I developed it using React and Tailwind.  
+ * Why did I create this project?  
+ * Because I thought it would be fun and creative to present my technical skills 
+ * directly inside an IDE </color><color='orange'>(Integrated Development Environment).</color><color='green'> :)
+ *
+ * </color><color='yellow'>This IDE is interactive: you can edit the code directly by clicking on the files in the Explorer :D</color><color='green'>
+ * </color><color='yellow'>< == The Explorer is located on the left </color><color='green'>
+ *
+ * ---- Education ----
+ * - 2019: Graduated from ITIS Q. Sella (BI) with full marks (100 cum laude).
+ * - 2019–2023: Enrolled at the University of Eastern Piedmont.
+ * - Dec 2023: Graduated with a final grade of 96/110.
+ *
+ * ---- Work Experience ----
+ * - 2020: Started as </color><color='light-blue'>System Administrator</color><color='green'> at Centrico (Banca Sella CED), 
+ *         while continuing my university studies.
+ * - 2022–Now: </color><color='red'>Software Engineer</color><color='green'> at Incas, member of SSI SCHÄFER Group, working as a C# .NET developer.
+ */
+</color>

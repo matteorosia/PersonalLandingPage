@@ -1,0 +1,24 @@
+<color='green'>Here a list of some projects I did</color>
+
+<color='purple'>export default</color> <color='blue'>function</color> <color='yellow'>MyProjects</color><color='orange'>()</color> <color='yellow'>{</color>
+    <color='purple'>return (</color>
+        <color='blue'><ul></color>
+            <color='blue'><li></color><color='orange'>Simple CMS for building websites using Bootstrap + PHP – high school graduation project.</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Multiple Arduino-based projects, including custom models built in wood</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Mobile e-commerce application developed in Kotlin – university project.</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Web app for irrigation field management developed in JavaScript (Node.js + Express.js):</color><color='blue'></li></color>
+              <color='blue'><ul></color>
+                <color='blue'><li></color><color='orange'>Receives sensor data</color><color='blue'></li></color>
+                <color='blue'><li></color><color='orange'>Stores data in a database</color><color='blue'></li></color>
+                <color='blue'><li></color><color='orange'>Controls actuators</color><color='blue'></li></color>
+                <color='blue'><li></color><color='orange'>Exposes APIs for frontend or management apps</color><color='blue'></li></color>
+                <color='blue'><li></color><color='orange'>Communicates with devices via MQTT</color><color='blue'></li></color>
+                <color='blue'><li></color><color='orange'>Includes a sensor simulator written in Java</color><color='blue'></li></color>
+              <color='blue'></ul></color>
+            <color='blue'><li></color><color='orange'>Personal website: matteorosia.altervista.org</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>WIP: Web app for task and collection management using React and Django</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Several video editing and recording projects, available on my YouTube channel.</color><color='blue'></li></color>
+            <color='blue'><li></color><color='orange'>Original music projects (live instruments + digital production), listenable on Spotify (20+ songs).</color><color='blue'></li></color>
+        <color='blue'></ul></color>
+    <color='purple'>);</color>
+<color='yellow'>}</color>
