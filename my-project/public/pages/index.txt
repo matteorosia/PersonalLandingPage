@@ -9,8 +9,9 @@
   <color='blue'></head></color>
   <<color='blue'>body</color>> 
     <<color='blue'>h1</color> <color='light-blue'>class</color>=<color='green'>"pippo"</color>><color='orange'>Hello world!</color><<color='blue'>/h1</color>>
-    <<color='blue'>p</color> <color='light-blue'>class</color><color='green'>"pluto"</color>><color='orange'>If your company usually evaluates candidates with tests like: 
-        “how many black chocolates fit in a box if you have 50 black and 50 white…”, feel free to skip it. 
-        My skills can be demonstrated directly through my work and experience. :)</color><<color='blue'>p</color>>
+    <<color='blue'>p</color> <color='light-blue'>class</color><color='green'>"pluto"</color>><color='orange'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. And bla bla… 
+      just adding some extra words here and there  to make this example description paragraph 
+      look a bit longer and more realistic :D"</color><<color='blue'>p</color>>
     <<color='blue'>script</color> <color='light-blue'>type</color>=<color='red'>"module"</color> <color='light-blue'>src</color>=<color='red'>"/src/main.jsx"</color>><<color='blue'>/script</color>>
  <<color='blue'>/body</color>>
