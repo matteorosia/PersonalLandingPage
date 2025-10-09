@@ -1,4 +1,4 @@
-export default function ExplorerItem({ id, title, type, tab, onClick }) {
+export default function ExplorerItem({ id, title, type, tab, onClick, isSelected }) {
   
     const marginMap = {
         0: "",
@@ -7,8 +7,12 @@ export default function ExplorerItem({ id, title, type, tab, onClick }) {
     };
 
     return (
-    <div className="px-4 text-white text-[14px] hover:bg-neutral-500 active:bg-neutral-500 cursor-pointer"  onClick={type > 0 ? () => onClick(id) : undefined}>
-        <p
+<div
+  className={`px-4 text-[14px] hover:bg-neutral-500 active:bg-neutral-600 transition-colors duration-200 cursor-pointer ${
+    isSelected ? "bg-neutral-600" : "bg-neutral-900"
+  }`}
+  onClick={type > 0 ? () => onClick(id) : undefined}
+>        <p
       className={`flex items-center font-mono ${marginMap[tab] || ""} ${
       type === 1 ? "text-blue-200" 
       : type === 2  ? "text-red-200" 

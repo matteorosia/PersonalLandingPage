@@ -26,9 +26,9 @@ export default function Navbar({ content, onClick, isMobile }) {
         <>
         <div className="w-full h-[50px] bg-neutral-900 border-b border-neutral-600 flex items-center px-4 relative">
           <div className="flex gap-2 absolute left-4">
-            <div className="rounded-full h-[20px] w-[20px] bg-red-500 cursor-pointer" onClick={onClick}></div>
-            <div className="rounded-full h-[20px] w-[20px] bg-yellow-400"></div>
-            <div className="rounded-full h-[20px] w-[20px] bg-green-600"></div>
+            <div className="rounded-full h-[20px] w-[20px] bg-red-500 hover:bg-red-700 active:bg-red-900 transition-colors duration-400 cursor-pointer" onClick={onClick}></div>
+            <div className="rounded-full h-[20px] w-[20px] bg-yellow-400 hover:bg-yellow-700 active:bg-yellow-900 transition-colors duration-400 cursor-pointer"></div>
+            <div className="rounded-full h-[20px] w-[20px] bg-green-600 hover:bg-green-700 active:bg-green-900 transition-colors duration-400 cursor-pointer"></div>
           </div>
           <div className="mx-auto max-sm:hidden">
             <div

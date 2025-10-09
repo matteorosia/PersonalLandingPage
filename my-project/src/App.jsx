@@ -4,7 +4,8 @@ import CodeSection from "./components/CodeSection";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/SideBar";
 import Footer from "./components/Footer";
-import MenuMobile from "./components/MenuMobile";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function App() {
   const [filePath, setFilePath] = useState("");
@@ -35,10 +36,17 @@ export default function App() {
     default:
       f = ".jsx";
   }
-console.log(val + f);
   return  val + f;
 }
 
+   useGSAP(() => {
+      gsap.to('#ide-form', {
+        margin: 0,
+        repeat: -1,
+        yoyo: true,
+        duration: 1,
+      });
+  }, []);
 
   useEffect(() => {
     // funzione che controlla se la finestra è "mobile"
@@ -73,7 +81,7 @@ console.log(val + f);
   return (
     <>
       <div className="flex sm:min-h-screen max-sm:min-h-screen">
-        <div className="bg-amber-100 sm:m-10 sm:rounded-[5px] w-full flex flex-col sm:overflow-hidden">
+        <div className="bg-amber-100 sm:m-10 sm:rounded-[5px] w-full flex flex-col sm:overflow-hidden id='ide-form'">
           <Navbar
             onClick={handleCloseWindow}
             isMobile = {isMobile}
