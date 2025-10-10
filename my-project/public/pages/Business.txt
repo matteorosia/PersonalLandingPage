@@ -21,3 +21,5 @@
         </>
     <color='purple'>);</color>
 <color='yellow'>}</color>
+
+<error>dim pippo = </error>

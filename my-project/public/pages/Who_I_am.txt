@@ -11,5 +11,6 @@
  * </color><color='yellow'>This IDE is interactive: you can edit the code directly by clicking on the files in the Explorer :D</color><color='green'>
  * </color><color='yellow'>< == The Explorer is located on the left </color><color='green'>
  *
-*/
-</color>
+*/</color>
+
+<error>Hello World...</error>

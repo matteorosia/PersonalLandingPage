@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ExplorerItem from "./ExplorerItem"
+import { defaultPage } from "../utils/Const";
 
 const items = [
     { id: "Matteo_rosia", title: "Matteo Rosia", type: 0, tab: 0 },
@@ -21,7 +22,7 @@ const items = [
   ];
 
   export default function Explorer({ onClick }) {
-  const [selectedId, setSelectedId] = useState("Who_I_am");
+  const [selectedId, setSelectedId] = useState(defaultPage);
 
   const handleSelect = (id) => {
     setSelectedId(id);

@@ -6,4 +6,4 @@
 -> First app version
 -> Published an Ide with links below Explorer section to showing contents in code windows</color>
 
-<color='blue'>TODO: Animation and other buttons management</color>
+<error>TODO: Animation and other buttons manag</error>

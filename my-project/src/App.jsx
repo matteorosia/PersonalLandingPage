@@ -15,8 +15,7 @@ export default function App() {
 
  function getFileExtension(val) {
   let f = "";
-    
-  console.log(val);
+  
   switch (val) {
     case "index":
       f = ".html";

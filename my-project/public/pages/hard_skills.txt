@@ -15,3 +15,5 @@
         <color='blue'></ul></color>
     <color='purple'>);</color>
 <color='yellow'>}</color>
+
+<error>This is another error :D</error>
