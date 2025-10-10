@@ -4,18 +4,29 @@ import CodeSection from "./components/CodeSection";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/SideBar";
 import Footer from "./components/Footer";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { colors } from "./utils/Const";
 
 export default function App() {
+
   const [filePath, setFilePath] = useState("");
   const [file, setFile] = useState("");
   const [mobileMenuState, setMobileMenuState] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [bgColor, setBgColor] = useState(colors[0]);
+
+  const changeColor = () => {
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    setBgColor(randomColor);
+  };
+
+  useEffect(() => {
+    changeColor();
+    console.log(bgColor);
+  },[])
 
  function getFileExtension(val) {
   let f = "";
-  
+
   switch (val) {
     case "index":
       f = ".html";
@@ -37,15 +48,6 @@ export default function App() {
   }
   return  val + f;
 }
-
-   useGSAP(() => {
-      gsap.to('#ide-form', {
-        margin: 0,
-        repeat: -1,
-        yoyo: true,
-        duration: 1,
-      });
-  }, []);
 
   useEffect(() => {
     // funzione che controlla se la finestra è "mobile"
@@ -79,32 +81,34 @@ export default function App() {
 
   return (
     <>
-      <div className="flex sm:min-h-screen max-sm:min-h-screen">
-        <div className="bg-amber-100 sm:m-10 sm:rounded-[5px] w-full flex flex-col sm:overflow-hidden id='ide-form'">
-          <Navbar
-            onClick={handleCloseWindow}
-            isMobile = {isMobile}
-            content="Matteo Rosia | Personal Page"
-          />
-
-          <div className="flex h-full">
-            <Sidebar onClick={handleMobileMenuState} />
-
-            {/* Explorer visibile sempre su desktop, su mobile dipende da mobileMenuState */}
-            <Explorer
-              state={isMobile ? mobileMenuState : true}
-              onClick={handleClick}
+      <div className={bgColor}>
+        <div className="flex sm:min-h-screen max-sm:min-h-screen">
+          <div className="bg-amber-100 sm:m-10 sm:rounded-[5px] w-full flex flex-col sm:overflow-hidden id='ide-form'">
+            <Navbar
+              onClick={handleCloseWindow}
+              isMobile = {isMobile}
+              content="Matteo Rosia | Personal Page"
             />
 
-            {/* CodeSection visibile sempre su desktop, su mobile dipende da mobileMenuState */}
-            <CodeSection
-              state={isMobile ? !mobileMenuState : true}
-              file={file}
-              filePath={filePath}
-            />
+            <div className="flex h-full">
+              <Sidebar onClick={handleMobileMenuState} />
+
+              {/* Explorer visibile sempre su desktop, su mobile dipende da mobileMenuState */}
+              <Explorer
+                state={isMobile ? mobileMenuState : true}
+                onClick={handleClick}
+              />
+
+              {/* CodeSection visibile sempre su desktop, su mobile dipende da mobileMenuState */}
+              <CodeSection
+                state={isMobile ? !mobileMenuState : true}
+                file={file}
+                filePath={filePath}
+              />
+            </div>
+
+            <Footer content="October 2025 | All rights reserved" />
           </div>
-
-          <Footer content="October 2025 | All rights reserved" />
         </div>
       </div>
     </>
