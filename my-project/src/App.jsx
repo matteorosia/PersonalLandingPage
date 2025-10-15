@@ -4,7 +4,8 @@ import CodeSection from "./components/CodeSection";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/SideBar";
 import Footer from "./components/Footer";
-import { colors } from "./utils/Const";
+import { GetFileExtension } from "./utils/GetFileExtension";
+import { colors, transactionOption } from "./utils/Const";
 
 export default function App() {
 
@@ -13,6 +14,8 @@ export default function App() {
   const [mobileMenuState, setMobileMenuState] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [bgColor, setBgColor] = useState(colors[0]);
+  const [toggleStatus, setToggleStatus] = useState(true);
+  const [formState, setFormState] = useState(true);
 
   const changeColor = () => {
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -21,33 +24,7 @@ export default function App() {
 
   useEffect(() => {
     changeColor();
-    console.log(bgColor);
   },[])
-
- function getFileExtension(val) {
-  let f = "";
-
-  switch (val) {
-    case "index":
-      f = ".html";
-      break;
-    case "style":
-      f = ".css";
-      break;
-    case "pippo":
-      f = ".php";
-      break;
-    case "readme":
-      f = ".json"
-      break;
-    case "version":
-      f = ".txt";
-      break;
-    default:
-      f = ".jsx";
-  }
-  return  val + f;
-}
 
   useEffect(() => {
     // funzione che controlla se la finestra è "mobile"
@@ -63,7 +40,7 @@ export default function App() {
 
   function handleClick(id) {
     setFilePath("/pages/" + id + ".txt");
-    setFile(getFileExtension(id));
+    setFile(GetFileExtension(id));
     setMobileMenuState(!mobileMenuState);
   }
 
@@ -83,20 +60,27 @@ export default function App() {
     <>
       <div className={bgColor}>
         <div className="flex sm:min-h-screen max-sm:min-h-screen">
-          <div className="bg-amber-100 sm:m-10 sm:rounded-[5px] w-full flex flex-col sm:overflow-hidden id='ide-form'">
+          <div className={`bg-amber-100 w-full flex flex-col sm:overflow-hidden ${transactionOption} ${
+            formState ? `sm:m-15 sm:rounded-[5px]` : `sm:m-0 `
+          }`}>
             <Navbar
               onClick={handleCloseWindow}
               isMobile = {isMobile}
               content="Matteo Rosia | Personal Page"
+              toggleStatus = {toggleStatus}
+              setToggleStatus = {setToggleStatus}
+              formState = {formState}
+              setFormState = {setFormState}
             />
 
             <div className="flex h-full">
-              <Sidebar onClick={handleMobileMenuState} />
+              <Sidebar onClick={handleMobileMenuState} toggleStatus = {toggleStatus}/>
 
               {/* Explorer visibile sempre su desktop, su mobile dipende da mobileMenuState */}
               <Explorer
                 state={isMobile ? mobileMenuState : true}
                 onClick={handleClick}
+                toggleStatus = {toggleStatus}
               />
 
               {/* CodeSection visibile sempre su desktop, su mobile dipende da mobileMenuState */}
@@ -104,10 +88,11 @@ export default function App() {
                 state={isMobile ? !mobileMenuState : true}
                 file={file}
                 filePath={filePath}
+                toggleStatus={toggleStatus}
               />
             </div>
 
-            <Footer content="October 2025 | All rights reserved" />
+            <Footer toggleStatus={toggleStatus} content="October 2025 | All rights reserved" />
           </div>
         </div>
       </div>

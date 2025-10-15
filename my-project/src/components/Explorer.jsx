@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ExplorerItem from "./ExplorerItem"
-import { defaultPage } from "../utils/Const";
+import { defaultPage, firstBorderColorDark, firstBorderColorLight } from "../utils/Const";
+import { firstBgColorDark, firstBgColorLight, transactionOption } from "../utils/Const";
 
 const items = [
     { id: "Matteo_rosia", title: "Matteo Rosia", type: 0, tab: 0 },
@@ -21,7 +22,7 @@ const items = [
     { id: "version", title: "version.txt", type: 5, tab: 0 },
   ];
 
-  export default function Explorer({ onClick }) {
+  export default function Explorer({ onClick, toggleStatus }) {
   const [selectedId, setSelectedId] = useState(defaultPage);
 
   const handleSelect = (id) => {
@@ -30,9 +31,10 @@ const items = [
   };
 
   return (
-    <div className="h-full max-sm:w-full max-md:w-full bg-neutral-900 border-r border-neutral-600">
-      <div className="m-4 text-white font-mono">EXPLORER</div>
-
+    <div className={`h-full max-sm:w-full max-md:w-full border-r ${transactionOption} ${
+      toggleStatus ? `${firstBgColorDark} ${firstBorderColorDark}` : `${firstBgColorLight} ${firstBorderColorLight}`
+    }`}>
+       <div className={`m-4 font-mono ${toggleStatus ? "text-white" : "text-black"}`}>EXPLORER</div>
       {
       items.map((item) => (
         <ExplorerItem
@@ -40,6 +42,7 @@ const items = [
           {...item}
           onClick={() => handleSelect(item.id)}
           isSelected={selectedId === item.id}
+          toggleStatus = {toggleStatus}
         />
       ))}
     </div>

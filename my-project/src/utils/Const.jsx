@@ -15,3 +15,15 @@ export const colors = [
   "bg-fuchsia-100", "bg-fuchsia-200", "bg-pink-100", "bg-pink-200",
   "bg-rose-100", "bg-rose-200", "bg-orange-100", "bg-orange-200"
 ];
+
+export const transactionOption = "transition-all duration-300 ease-linear"
+
+export const firstBgColorDark = "bg-neutral-900"
+export const firstBorderColorDark = "border-neutral-600"
+export const secondaryBgColorDark = "bg-neutral-800"
+export const firstFontColorBlack = "text-white"
+
+export const firstBgColorLight = "bg-[#63a3ae]"
+export const firstBorderColorLight = "border-neutral-900"
+export const secondaryBgColorLight = "bg-sky-900"
+export const firstFontColorLight = "text-black"

@@ -1,10 +1,12 @@
-export default function Footer({content}) {
+import { firstFontColorBlack, firstFontColorLight, firstBgColorDark, firstBorderColorDark, firstBgColorLight, firstBorderColorLight, transactionOption } from "../utils/Const";
+export default function Footer({content, toggleStatus}) {
     return (
-        <div className="w-full h-[40px]
-            bg-neutral-900 border-t-1  
-            border-neutral-600 flex 
+        <div className={`w-full h-[40px]
+            border-t flex 
             justify-center items-center 
-            text-white text-[10px]">
+            text-[10px] ${transactionOption} ${
+                toggleStatus ? `${firstBgColorDark} ${firstBorderColorDark} ${firstFontColorBlack}` : `${firstBgColorLight} ${firstBorderColorLight} ${firstFontColorLight}` 
+            }`}>
         {content}
         </div>
     );
