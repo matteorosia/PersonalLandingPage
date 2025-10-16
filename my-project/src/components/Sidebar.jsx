@@ -8,7 +8,7 @@ import { firstBgColorDark, firstBgColorLight, firstBorderColorDark, firstBorderC
 
 export default function Sidebar({toggleStatus}) {
     return (
-        <div className={`h-full w-[80px] flex flex-col items-center gap-4 py-4 border-r ${transactionOption} ${
+        <div className={`h-full sm:min-w-[80px] max-sm:min-w-[60px] flex flex-col items-center gap-4 py-4 border-r ${transactionOption} ${
             toggleStatus ? `${firstBgColorDark} ${firstBorderColorDark}` : `${firstBgColorLight} ${firstBorderColorLight} `
         }`}>
             <img src={icon1} alt="icon1" className={`my-1 w-[30px] h-[30px] hover:w-[35px] hover:h-[35px] ${transactionOption}`}/>

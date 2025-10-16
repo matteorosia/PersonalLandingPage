@@ -16,13 +16,15 @@ export default function CodeSectionContent({ filePath }) {
   }, [filePath]);
 
   return (      
-    <div className="p-4 text-white font-mono sm:text-[14px] max-sm:text-[13px] whitespace-pre-wrap h-full">
+    <div className="p-4 text-white font-mono sm:text-[14px] max-sm:text-[12px] whitespace-pre-wrap break-words">
+      <div className="overflow-y-scroll max-sm:max-h-[calc(100vh-200px)]">
 
       {/*Contenuto del singolo file formattato*/}
       {RenderCodeContent(content)}
 
       {/* Caret con testo recuperato a partire dal contenuto del file */}
       <Caret content = {RenderErrorContent(content)}></Caret>
+      </div>
     </div>
   );
 }

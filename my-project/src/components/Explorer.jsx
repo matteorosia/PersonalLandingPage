@@ -22,7 +22,7 @@ const items = [
     { id: "version", title: "version.txt", type: 5, tab: 0 },
   ];
 
-  export default function Explorer({ onClick, toggleStatus }) {
+  export default function Explorer({ state, onClick, toggleStatus }) {
   const [selectedId, setSelectedId] = useState(defaultPage);
 
   const handleSelect = (id) => {
@@ -30,10 +30,16 @@ const items = [
     if (onClick) onClick(id);
   };
 
+  const bgcolor = toggleStatus ? `${firstBgColorDark} ${firstBorderColorDark}` : `${firstBgColorLight} ${firstBorderColorLight}`
+  const visibleProperty = state ? "" : "hidden"
+
+  const classes = `h-full max-sm:w-full max-md:w-full border-r 
+    ${transactionOption}
+    ${bgcolor}
+    ${visibleProperty}`
+
   return (
-    <div className={`h-full max-sm:w-full max-md:w-full border-r ${transactionOption} ${
-      toggleStatus ? `${firstBgColorDark} ${firstBorderColorDark}` : `${firstBgColorLight} ${firstBorderColorLight}`
-    }`}>
+    <div className={classes}>
        <div className={`m-4 font-mono ${toggleStatus ? "text-white" : "text-black"}`}>EXPLORER</div>
       {
       items.map((item) => (

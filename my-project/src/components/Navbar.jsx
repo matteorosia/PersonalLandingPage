@@ -24,13 +24,14 @@ export default function Navbar({ content, onClick, isMobile, toggleStatus, setTo
           </div>
           <div className="mx-auto">
             <div
-              className={`w-[400px] h-[30px] rounded-sm border
+              className={`w-[180px] h-[30px] rounded-sm border
                 font-mono flex justify-center items-center 
-                text-[15px] ${transactionOption}
+                text-[9px] ${transactionOption}
                 ${toggleStatus ? `${firstBgColorDark} ${firstBorderColorDark} ${firstFontColorBlack}` : `${firstBgColorLight} ${firstBorderColorLight} ${firstFontColorLight}`}
               }`}>{content}
             </div>
           </div>
+            <Toggle toggleStatus={toggleStatus} setToggleStatus={setToggleStatus}></Toggle>
         </div>
         </>
       ) : (

@@ -56,13 +56,16 @@ export default function App() {
     setMobileMenuState(!mobileMenuState);
   }
 
+  const resizingForm = formState ? `sm:h-[720px] sm:w-[1300px] max-sm:h-[calc(100vh-40px)] max-sm:w-full rounded-[12px] max-sm:mx-[10px] max-sm:my-[20px] sm:m-[30px]` : `h-screen w-full`
+  const classes = `w-full flex flex-col overflow-y-hidden
+    ${transactionOption}
+    ${resizingForm}`
+
   return (
     <>
-      <div className={bgColor}>
-        <div className="flex sm:min-h-screen max-sm:min-h-screen">
-          <div className={`bg-amber-100 w-full flex flex-col sm:overflow-hidden ${transactionOption} ${
-            formState ? `sm:m-15 sm:rounded-[5px]` : `sm:m-0 `
-          }`}>
+      <body className={bgColor}>
+        <div className={`flex min-h-screen justify-center items-center`}>
+          <div className={classes}>
             <Navbar
               onClick={handleCloseWindow}
               isMobile = {isMobile}
@@ -95,7 +98,7 @@ export default function App() {
             <Footer toggleStatus={toggleStatus} content="October 2025 | All rights reserved" />
           </div>
         </div>
-      </div>
+      </body>
     </>
   );
 }

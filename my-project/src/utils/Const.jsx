@@ -17,13 +17,20 @@ export const colors = [
 ];
 
 export const transactionOption = "transition-all duration-300 ease-linear"
+export const transactionOptionChangeExplorerItem = "transition-all duration-100 ease-linear"
 
 export const firstBgColorDark = "bg-neutral-900"
 export const firstBorderColorDark = "border-neutral-600"
 export const secondaryBgColorDark = "bg-neutral-800"
 export const firstFontColorBlack = "text-white"
+export const firstBgColorExplorerItemSelectedDark = "bg-neutral-500"
+export const firstBgColorExplorerItemHoverDark = "hover:bg-neutral-700"
+export const firstBgColorExplorerItemFocusDark = "active:bg-neutral-800"
 
 export const firstBgColorLight = "bg-[#63a3ae]"
 export const firstBorderColorLight = "border-neutral-900"
 export const secondaryBgColorLight = "bg-sky-900"
 export const firstFontColorLight = "text-black"
+export const firstBgColorExplorerItemSelectedLight = "bg-sky-700"
+export const firstBgColorExplorerItemHoverLight = "hover:bg-sky-800"
+export const firstBgColorExplorerItemFocusLight = "active:bg-sky-900"
