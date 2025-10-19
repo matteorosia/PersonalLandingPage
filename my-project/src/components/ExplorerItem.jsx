@@ -56,7 +56,7 @@ export default function ExplorerItem({
       >
         {type === 0 && (
           <svg
-            className="w-2 h-2 text-gray-800 dark:text-white inline mr-2"
+            className={`w-2 h-2 inline mr-2 ${toggleStatus ? "text-white": "text-black"}`}
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

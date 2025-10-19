@@ -12,4 +12,4 @@
     <color='purple'>);</color>
 <color='yellow'>}</color>
 
-<error>This is an error :D</error>
+<error>This is an error :D </error>

@@ -3,7 +3,7 @@ import Caret from "./Caret";
 import { RenderCodeContent } from "../utils/RenderCodeContent";
 import { RenderErrorContent } from "../utils/RenderErrorContent";
 
-export default function CodeSectionContent({ filePath }) {
+export default function CodeSectionContent({ filePath, toggleStatus }) {
   const [content, setContent] = useState("");
 
   useEffect(() => {
@@ -16,15 +16,13 @@ export default function CodeSectionContent({ filePath }) {
   }, [filePath]);
 
   return (      
-    <div className="p-4 text-white font-mono sm:text-[14px] max-sm:text-[12px] whitespace-pre-wrap break-words">
-      <div className="overflow-y-scroll max-sm:max-h-[calc(100vh-200px)]">
+    <div className={`p-4 font-mono sm:text-[13px] max-sm:text-[10px] overflow-scroll whitespace-pre-wrap break-words ${toggleStatus ? `text-white` :`text-black`}`}>
 
       {/*Contenuto del singolo file formattato*/}
-      {RenderCodeContent(content)}
+      {RenderCodeContent(content, toggleStatus)}
 
       {/* Caret con testo recuperato a partire dal contenuto del file */}
-      <Caret content = {RenderErrorContent(content)}></Caret>
-      </div>
+      <Caret toggleStatus = {toggleStatus} content = {RenderErrorContent(content)}></Caret>
     </div>
   );
 }

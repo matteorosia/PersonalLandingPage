@@ -56,20 +56,22 @@ export default function App() {
     setMobileMenuState(!mobileMenuState);
   }
 
-  const resizingForm = formState ? `sm:h-[720px] sm:w-[1300px] max-sm:h-[calc(100vh-40px)] max-sm:w-full rounded-[12px] max-sm:mx-[10px] max-sm:my-[20px] sm:m-[30px]` : `h-screen w-full`
-  const classes = `w-full flex flex-col overflow-y-hidden
+  const resizingForm = formState ? `sm:p-[8vh] max-sm:p-[2vh]` : ``
+  const resizingFormClasses = `flex max-sm:min-h-screen sm:h-[100vh] w-screen justify-center items-center
     ${transactionOption}
     ${resizingForm}`
+
+  const roundedFormState = formState ? "rounded-[12px]" : "rounded-0"
 
   return (
     <>
       <body className={bgColor}>
-        <div className={`flex min-h-screen justify-center items-center`}>
-          <div className={classes}>
+        <div className={resizingFormClasses}>
+          <div className={`flex w-full h-full flex-col overflow-hidden ${roundedFormState} ${transactionOption}`}>
             <Navbar
               onClick={handleCloseWindow}
               isMobile = {isMobile}
-              content="Matteo Rosia | Personal Page"
+              content="Matteo Rosia | Personal Page"s
               toggleStatus = {toggleStatus}
               setToggleStatus = {setToggleStatus}
               formState = {formState}

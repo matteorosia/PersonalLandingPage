@@ -16,4 +16,4 @@
     <color='purple'>);</color>
 <color='yellow'>}</color>
 
-<error>This is another error :D</error>
+<error>This is another error :D </error>

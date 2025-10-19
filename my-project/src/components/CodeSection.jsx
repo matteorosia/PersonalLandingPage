@@ -6,7 +6,7 @@ export default function CodeSection({file, filePath, state, toggleStatus}) {
 
     return (
         state &&
-        <div className={`h-full w-full flex flex-col ${transactionOption} ${ toggleStatus ? `${secondaryBgColorDark}` : `${secondaryBgColorLight}`}`}>
+        <div className={`max-sm:h-[80vh] sm:h-full w-full flex flex-col ${transactionOption} ${ toggleStatus ? `${secondaryBgColorDark}` : `${secondaryBgColorLight}`}`}>
             <div className="flex">
 
                 {/* Tab */}

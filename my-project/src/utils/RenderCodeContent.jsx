@@ -1,4 +1,4 @@
-export const RenderCodeContent = (text) => {
+export const RenderCodeContent = (text, colorMode) => {
   // Regex che cattura tutto ciò che è tra <error>...</error>
   const regex = /<error>[\s\S]*?<\/error>/g;
 
@@ -18,13 +18,22 @@ export const RenderCodeContent = (text) => {
     }
 
     let tailwindClass = "";
-    if (className === "red") tailwindClass = "text-red-500";
-    if (className === "green") tailwindClass = "text-green-500";
-    if (className === "blue") tailwindClass = "text-blue-500";
-    if (className === "yellow") tailwindClass = "text-yellow-500";
-    if (className === "purple") tailwindClass = "text-purple-500";
-    if (className === "orange") tailwindClass = "text-orange-500";
-    if (className === "light-blue") tailwindClass = "text-blue-300";
+    if (className === "red") {
+      tailwindClass = colorMode ? "text-red-500" : "text-red-900";
+    } else if (className === "green") {
+      tailwindClass = colorMode ? "text-green-500" : "text-green-900";
+    } else if (className === "blue") {
+      tailwindClass = colorMode ? "text-blue-500" : "text-blue-900";
+    } else if (className === "yellow") {
+      tailwindClass = colorMode ? "text-yellow-500" : "text-yellow-900";
+    } else if (className === "purple") {
+      tailwindClass = colorMode ? "text-purple-500" : "text-purple-900";
+    } else if (className === "orange") {
+      tailwindClass = colorMode ? "text-orange-500" : "text-orange-900";
+    } else if (className === "light-blue") {
+      tailwindClass = colorMode ? "text-blue-300" : "text-blue-900";
+    }
+
 
     parts.push(
       <span key={match.index} className={tailwindClass}>

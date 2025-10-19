@@ -33,7 +33,7 @@ const items = [
   const bgcolor = toggleStatus ? `${firstBgColorDark} ${firstBorderColorDark}` : `${firstBgColorLight} ${firstBorderColorLight}`
   const visibleProperty = state ? "" : "hidden"
 
-  const classes = `h-full max-sm:w-full max-md:w-full border-r 
+  const classes = `max-sm:w-full max-sm:h-[80vh] max-md:w-full border-r
     ${transactionOption}
     ${bgcolor}
     ${visibleProperty}`
