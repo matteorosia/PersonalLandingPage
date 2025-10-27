@@ -6,4 +6,7 @@
 -> First app version
 -> Published an Ide with links below Explorer section to showing contents in code windows</color>
 
-<error>TODO: Animation and other buttons manag</error>
+<color='purple'>- v1.1 [15 Of October 2025] Animation and responsivity
+-> Added carret, resizing, light & dark mode based on toogle switching</color>
+
+<error>TODO: Integration with django and rest pulling backend</error>
