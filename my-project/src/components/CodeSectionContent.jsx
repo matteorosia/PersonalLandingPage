@@ -16,7 +16,7 @@ export default function CodeSectionContent({ filePath, toggleStatus }) {
   }, [filePath]);
 
   return (      
-    <div className={`p-4 font-mono sm:text-[13px] max-sm:text-[10px] overflow-scroll whitespace-pre-wrap break-words ${toggleStatus ? `text-white` :`text-black`}`}>
+    <div className={`p-4 font-mono sm:text-[13px] max-sm:text-[10px] whitespace-pre-wrap break-words ${toggleStatus ? `text-white` :`text-black`}`}>
 
       {/*Contenuto del singolo file formattato*/}
       {RenderCodeContent(content, toggleStatus)}
