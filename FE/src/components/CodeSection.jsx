@@ -1,6 +1,6 @@
 import CodeSectionContent from "./CodeSectionContent";
 import CodeSectionTab from "./CodeSectionTab";
-import { defaultPage, defaultExtensionPages, pathPages, defaultExtension, firstBgColorDark, firstBorderColorLight, firstBgColorLight, firstBorderColorDark, secondaryBgColorDark, secondaryBgColorLight, transactionOption } from "../utils/Const";
+import { defaultPage, firstBgColorDark, firstBorderColorLight, firstBgColorLight, firstBorderColorDark, secondaryBgColorDark, secondaryBgColorLight, transactionOption } from "../utils/Const";
 
 export default function CodeSection({file, filePath, state, toggleStatus}) {
 
@@ -10,13 +10,13 @@ export default function CodeSection({file, filePath, state, toggleStatus}) {
             <div className="flex">
 
                 {/* Tab */}
-                <CodeSectionTab toggleStatus = {toggleStatus} file={file || defaultPage + defaultExtension}></CodeSectionTab>
+                <CodeSectionTab toggleStatus = {toggleStatus} file={file || defaultPage}></CodeSectionTab>
                 <div className={`w-full h-[40px] border-b ${transactionOption} ${toggleStatus ? `${firstBgColorDark} ${firstBorderColorDark}` : `${firstBgColorLight} ${firstBorderColorLight}`}`}></div>
             </div>
             <div className="flex">
 
                 {/* Contenuto del codice */}
-               <CodeSectionContent toggleStatus = {toggleStatus} filePath={filePath || pathPages + defaultPage + defaultExtensionPages}></CodeSectionContent>
+               <CodeSectionContent toggleStatus = {toggleStatus} filePath={filePath || defaultPage}></CodeSectionContent>
             </div>
       </div> 
     );

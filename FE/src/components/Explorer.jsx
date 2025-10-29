@@ -6,7 +6,7 @@ import { firstBgColorDark, firstBgColorLight, transactionOption } from "../utils
 const items = [
     { id: "Matteo_rosia", title: "Matteo Rosia", type: 0, tab: 0 },
     { id: "About_me", title: "About me", type: 0, tab: 1 },
-    { id: "Who_I_am", title: "Who_I_am.jsx", type: 1, tab: 2 },
+    { id: "who_i_am", title: "Who_I_am.jsx", type: 1, tab: 2 },
     { id: "skills", title: "Skills", type: 0, tab: 1 },
     { id: "Soft_skills", title: "Soft_skills.jsx", type: 1, tab: 2 },
     { id: "Hard_skills", title: "Hard_skills.jsx", type: 1, tab: 2 },

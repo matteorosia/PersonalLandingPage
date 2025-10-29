@@ -39,7 +39,7 @@ export default function App() {
   }, []);
 
   function handleClick(id) {
-    setFilePath("/pages/" + id + ".txt");
+    setFilePath(id);
     setFile(GetFileExtension(id));
     setMobileMenuState(!mobileMenuState);
   }

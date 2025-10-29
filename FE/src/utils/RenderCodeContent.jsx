@@ -2,6 +2,7 @@ export const RenderCodeContent = (text, colorMode) => {
   // Regex che cattura tutto ciò che è tra <error>...</error>
   const regex = /<error>[\s\S]*?<\/error>/g;
 
+  console.log(text);
   // Sostituisce ogni match con stringa vuota → lo elimina
   const cleanedText = text.replace(regex, "");
 

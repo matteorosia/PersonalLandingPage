@@ -1,7 +1,4 @@
-export const defaultPage = "Who_I_am"
-export const defaultExtension = ".jsx"
-export const pathPages = "pages/"
-export const defaultExtensionPages = ".txt"
+export const defaultPage = "who_i_am"
 
 export const colors = [
   "bg-red-100", "bg-red-200", "bg-pink-100", "bg-pink-200",
