@@ -31,3 +31,16 @@ export const firstFontColorLight = "text-black"
 export const firstBgColorExplorerItemSelectedLight = "bg-neutral-400"
 export const firstBgColorExplorerItemHoverLight = "hover:bg-neutral-500"
 export const firstBgColorExplorerItemFocusLight = "active:bg-neutral-600"
+
+export const keys_option = [
+  {id: "who_i_am", caption: "Who I am"},
+  {id: "soft_skills",caption: "Soft skills"},
+  {id: "hard_skills",caption: "Hard skills"},
+  {id: "business",caption: "Business"},
+  {id: "my_projects",caption: "My Projects"},
+  {id: "who_i_worked_with",caption: "Who I worked"},
+  {id: "index",caption: "Index"},
+  {id: "style",caption: "Style"},
+  {id: "readme",caption: "Readme"},
+  {id: "version",caption: "Version"}
+];

@@ -8,8 +8,6 @@ import icon4_dark from "../assets/dark/icon4-dark.png"
 import icon4_light from "../assets/light/icon4-light.png";
 import icon5_dark from "../assets/dark/icon5-dark.png"
 import icon5_light from "../assets/light/icon5-light.png";
-
-
 import { firstBgColorDark, firstBgColorLight, firstBorderColorDark, firstBorderColorLight, transactionOption } from "../utils/Const";
 
 export default function Sidebar({toggleStatus}) {

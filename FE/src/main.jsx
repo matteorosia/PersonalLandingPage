@@ -5,11 +5,22 @@ import "./style.css";
 
 //Pages
 import App from './App.jsx';
+import Pannel from './Pannel.jsx';
+import Login from './Login.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>
+    element: <App/>,
+    errorElement: <div>Error 404</div>
+  },
+  {
+    path: "/login",
+    element: <Login/>
+  },
+  {
+    path: "/pannel",
+    element: <Pannel/>
   },
 ])
 
