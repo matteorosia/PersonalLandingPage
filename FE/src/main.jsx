@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <Login/>
   },
   {
-    path: "/pannel",
+    path: "/panel",
     element: <Pannel/>
   },
 ])

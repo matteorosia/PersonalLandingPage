@@ -15,7 +15,7 @@ export default function Footer({content, toggleStatus}) {
                 }`}>
             {content}
             <div className="flex absolute right-5 gap-4">
-                <Link to='/login'>
+                <Link to='/panel'>
                      <img src={toggleStatus ? icon_settings_dark : icon_settings_light} alt="icon" className={`my-1 w-[20px] h-[20px] hover:w-[25px] hover:h-[25px] ${transactionOption}`}/>
                 </Link>
                 <img src={toggleStatus ? icon_translate_dark : icon_translate_light} alt="icon" className={`my-1 w-[20px] h-[20px] hover:w-[25px] hover:h-[25px] ${transactionOption}`}/>

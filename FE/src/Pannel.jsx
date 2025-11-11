@@ -39,9 +39,9 @@ export default function Pannel() {
         <div className="bg-neutral-800 font-mono">
             <div className="h-screen w-screen bg-neutral-700 flex flex-col gap-4">
             <div className="relative w-full min-h-[80px] bg-neutral-800 border-b border-neutral-600 flex justify-center items-center">
-                <h1 className="text-white text-[30px]">CONTROL PANNEL</h1>
+                <h1><span className="text-red-400 text-[30px]">PERSONAL CV IDE:</span><span className="text-white text-[30px]"> CONTROL PANEL</span></h1>
                 <h3 className="absolute right-5 text-white p-2 rounded-2xl text-[13px]">
-                    Hello Matteo</h3>
+                    Hello Matteo!</h3>
             </div>
 
            <div className="flex flex-col h-full justify-center items-center">
@@ -62,7 +62,7 @@ export default function Pannel() {
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                     />
-                    <div className="bg-neutral-800 text-[13px] p-4 w-full outline-0 rounded-[4px] min-h-[500px] whitespace-pre-wrap break-words">
+                    <div className="bg-neutral-800 text-[13px] p-4 w-full outline-0 rounded-[4px] min-h-[500px] text-white whitespace-pre-wrap break-words">
                         {RenderCodeContent(content,true)}
                         {<Caret toggleStatus = {true} content = {RenderErrorContent(content)}></Caret>}
                     </div>
@@ -71,10 +71,11 @@ export default function Pannel() {
                 
                 <div className="flex flex-row">
                     <Link to="/" className="text-white font-semibold">
-                        <div className="px-[12px] m-4 border border-neutral-400 rounded-[4px]">Go Back</div>
+                        <div className={`px-[12px] m-4 border border-neutral-500 rounded-[4px] hover:bg-neutral-600 active:bg-neutral-800 active:border-neutral-800 ${c.transactionOption}`}>Go Back</div>
                     </Link>
-                     <div className="px-[12px] m-4 border text-white font-bold border-neutral-400 
-                                    rounded-[4px] cursor-pointer" onClick={handleUpdate}>Update
+                    <div className={`text-white cursor-pointer px-[12px] m-4 border border-neutral-500 rounded-[4px] hover:bg-neutral-600
+                         active:bg-neutral-800 active:border-neutral-800 ${c.transactionOption}`}
+                        onClick={handleUpdate}>Update
                     </div>
                 </div>
             </div>
