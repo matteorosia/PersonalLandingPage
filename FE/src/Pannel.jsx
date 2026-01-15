@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import * as c from "./utils/Const";
 import { useState, useEffect } from "react";
-import { fetchContent, updateContent } from "./utils/api";
 import { RenderCodeContent } from "./utils/RenderCodeContent";
 import { RenderErrorContent } from "./utils/RenderErrorContent";
 import Caret from "./components/Caret";
@@ -16,23 +15,6 @@ export default function Pannel() {
     function handleEventChange(e){
         setOptionState(e.target.value);
     }
-
-    async function handleUpdate() {
-        await updateContent(selected, {
-            title: selected,
-            value: content,
-        });
-
-        navigate("/");
-    }
-
-      useEffect(() => {
-        const loadContent = async () => {
-          const c = await fetchContent(selected, true);
-          setContent(c);
-        };
-        loadContent();
-      }, [selected]);
 
     return (
         <>
@@ -75,7 +57,7 @@ export default function Pannel() {
                     </Link>
                     <div className={`text-white cursor-pointer px-[12px] m-4 border border-neutral-500 rounded-[4px] hover:bg-neutral-600
                          active:bg-neutral-800 active:border-neutral-800 ${c.transactionOption}`}
-                        onClick={handleUpdate}>Update
+                        >Update
                     </div>
                 </div>
             </div>

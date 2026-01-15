@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react";
 import Caret from "./Caret";
+import axios from "axios"
 import { RenderCodeContent } from "../utils/RenderCodeContent";
 import { RenderErrorContent } from "../utils/RenderErrorContent";
-import { fetchContent } from "../utils/api";
 
-export default function CodeSectionContent({ filePath, toggleStatus }) {
+export default function CodeSectionContent({ filePath, toggleStatus, username }) {
   const [content, setContent] = useState(null);
 
   useEffect(() => {
-    const loadContent = async () => {
-      const c = await fetchContent(filePath, true);
-      setContent(c);
-    };
-
-    loadContent();
+    const fetchContent = async () => {
+      try{
+        const res = await axios.get(`http://localhost:8000/contents/${username}/${filePath}`)
+        setContent(res.data)
+        console.log(username)
+      }
+      catch(error){
+        console.log(error)
+      }
+    }
+    fetchContent()
   }, [filePath]);
 
   if (content === null) {
@@ -33,7 +38,7 @@ export default function CodeSectionContent({ filePath, toggleStatus }) {
     <div className={`p-4 font-mono sm:text-[13px] max-sm:text-[10px] whitespace-pre-wrap break-words ${toggleStatus ? `text-white` :`text-black`}`}>
 
       {/*Contenuto del singolo file formattato*/}
-      {RenderCodeContent(content, toggleStatus)}
+      {RenderCodeContent(content[0].content, toggleStatus)}
 
       {/* Caret con testo recuperato a partire dal contenuto del file */}
       {<Caret toggleStatus = {toggleStatus} content = {RenderErrorContent(content)}></Caret>}

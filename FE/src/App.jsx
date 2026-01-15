@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Explorer from "./components/Explorer";
 import CodeSection from "./components/CodeSection";
 import Navbar from "./components/Navbar";
@@ -16,6 +17,7 @@ export default function App() {
   const [bgColor, setBgColor] = useState(colors[0]);
   const [toggleStatus, setToggleStatus] = useState(true);
   const [formState, setFormState] = useState(true);
+  const { username } = useParams(); 
 
   const changeColor = () => {
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -71,7 +73,7 @@ export default function App() {
             <Navbar
               onClick={handleCloseWindow}
               isMobile = {isMobile}
-              content="Matteo Rosia | Personal Page"s
+              content={`${username} | Personal Page`}
               toggleStatus = {toggleStatus}
               setToggleStatus = {setToggleStatus}
               formState = {formState}
@@ -94,6 +96,7 @@ export default function App() {
                 file={file}
                 filePath={filePath}
                 toggleStatus={toggleStatus}
+                username={username}
               />
             </div>
 

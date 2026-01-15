@@ -5,6 +5,7 @@ export const RenderCodeContent = (text, colorMode) => {
   // Sostituisce ogni match con stringa vuota → lo elimina
   const cleanedText = text.replace(regex, "");
 
+  console.log(text);
   const parts = [];
   const colorRegex = /<color=['"]([^'"]+)['"]>([\s\S]*?)<\/color>/g;
   let lastIndex = 0;

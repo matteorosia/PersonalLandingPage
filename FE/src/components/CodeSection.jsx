@@ -2,7 +2,7 @@ import CodeSectionContent from "./CodeSectionContent";
 import CodeSectionTab from "./CodeSectionTab";
 import { defaultPage, firstBgColorDark, firstBorderColorLight, firstBgColorLight, firstBorderColorDark, secondaryBgColorDark, secondaryBgColorLight, transactionOption } from "../utils/Const";
 
-export default function CodeSection({file, filePath, state, toggleStatus}) {
+export default function CodeSection({file, filePath, state, toggleStatus, username}) {
 
     return (
         state &&
@@ -16,7 +16,7 @@ export default function CodeSection({file, filePath, state, toggleStatus}) {
             <div className="flex">
 
                 {/* Contenuto del codice */}
-               <CodeSectionContent toggleStatus = {toggleStatus} filePath={filePath || defaultPage}></CodeSectionContent>
+               <CodeSectionContent username= {username} toggleStatus = {toggleStatus} filePath={filePath || defaultPage}></CodeSectionContent>
             </div>
       </div> 
     );

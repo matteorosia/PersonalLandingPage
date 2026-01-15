@@ -10,7 +10,7 @@ import Login from './Login.jsx';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/:username",
     element: <App/>,
     errorElement: <div>Error 404</div>
   },

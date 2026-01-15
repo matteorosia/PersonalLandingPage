@@ -9,13 +9,14 @@ export default function Login(){
     const [message, setMessage] = useState("")
     const navigate = useNavigate()
 
-    function handleLoginClick(e){
-        e.preventDefault()
-        if (username == "Admin" && password == "PippoPluto123"){
-            navigate("/panel");
-        }
-        else{
-            setMessage("Password errata");
+    async function handleLoginClick(e) {
+        e.preventDefault();
+
+        try {
+            const res = await axios.get(`http://localhost:8800/username/${username}/${filePath}`);
+            console.log("Ok");
+        } catch (error) {
+            console.log(error);
         }
     }
 
