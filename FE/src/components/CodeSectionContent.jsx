@@ -10,7 +10,7 @@ export default function CodeSectionContent({ filePath, toggleStatus, username })
   useEffect(() => {
     const fetchContent = async () => {
       try{
-        const res = await axios.get(`http://localhost:8000/contents/${username}/${filePath}`)
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/contents/${username}/${filePath}`);
         console.log(res.data)
         setContent(res.data)
       }
