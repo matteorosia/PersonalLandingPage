@@ -11,8 +11,8 @@ export default function CodeSectionContent({ filePath, toggleStatus, username })
     const fetchContent = async () => {
       try{
         const res = await axios.get(`http://localhost:8000/contents/${username}/${filePath}`)
+        console.log(res.data)
         setContent(res.data)
-        console.log(username)
       }
       catch(error){
         console.log(error)

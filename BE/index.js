@@ -1,12 +1,11 @@
 import express from "express";
-import mysql from "mysql2";
+import { Pool } from "pg";
 import cors from "cors";
 import dotenv from "dotenv";
 
 dotenv.config();
 
 const app = express();
-
 app.use(express.json());
 app.use(cors());
 
@@ -16,48 +15,33 @@ app.listen(PORT, () => {
   console.log("Connected to backend on port", PORT);
 });
 
-const db = mysql.createConnection({
+// PostgreSQL Pool
+const pool = new Pool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: process.env.DB_PORT || 3306,
+  port: process.env.DB_PORT || 5432, // PostgreSQL usa 5432
+  ssl: false
 });
 
-db.connect((err) => {
+// Test connessione
+pool.connect((err) => {
   if (err) {
-    console.error("Errore MySQL:", err);
+    console.error("Errore PostgreSQL:", err);
   } else {
-    console.log("Connesso a MySQL!");
+    console.log("Connesso a PostgreSQL!");
   }
 });
 
-app.get("/", (req, res) => {
-  res.json("hello this is an api");
-});
-
-app.get("/contents/:user/:title", (req, res) => {
+app.get("/contents/:user/:title", async (req, res) => {
   const { user, title } = req.params;
-  const query = "SELECT * FROM contents WHERE title = ? AND user = ?";
+  const query = "SELECT * FROM contents WHERE title = $1 AND username = $2";
 
-  db.query(query, [title, user], (err, data) => {
-    if (err) return res.status(500).json(err);
-    return res.json(data);
-  });
-});
-
-app.post("/books", (req, res) => {
-  const query =
-    "INSERT INTO books (`title`,`description`,`cover`) VALUES (?)";
-
-  const values = [
-    req.body.title,
-    req.body.description,
-    req.body.cover,
-  ];
-
-  db.query(query, [values], (err, data) => {
-    if (err) return res.status(500).json(err);
-    return res.status(201).json(data);
-  });
+  try {
+    const { rows } = await pool.query(query, [title, user]);
+    return res.json(rows);
+  } catch (err) {
+    return res.status(500).json(err);
+  }
 });
