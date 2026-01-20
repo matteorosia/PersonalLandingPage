@@ -25,6 +25,16 @@ const pool = new Pool({
   ssl: { rejectUnauthorized: false }
 });
 
+app.use(cors({
+  origin: [
+    "https://personal-cv-ide.web.app",
+    "http://localhost:5173" // Vite in locale
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: false
+}));
+
+
 // Test connessione
 pool.connect((err) => {
   if (err) {
