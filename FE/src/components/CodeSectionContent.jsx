@@ -10,12 +10,7 @@ export default function CodeSectionContent({ filePath, toggleStatus, username })
   useEffect(() => {
     const fetchContent = async () => {
       try{
-           console.log("Hello world")
-             console.log(import.meta.env.VITE_API_URL)
         const res = await axios.get(`${import.meta.env.VITE_API_URL}/contents/${username}/${filePath}`);
-        console.log(`${import.meta.env.VITE_API_URL}/contents/${username}/${filePath}`)
-      
-     
         setContent(res.data)
       }
       catch(error){

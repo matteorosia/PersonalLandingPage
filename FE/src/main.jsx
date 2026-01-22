@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import "./style.css"; 
 
 //Pages
@@ -9,6 +9,10 @@ import Pannel from './Pannel.jsx';
 import Login from './Login.jsx';
 
 const router = createBrowserRouter([
+   {
+    path: "/",
+    element: <Navigate to="/mrosia" replace />
+  },
   {
     path: "/:username",
     element: <App/>,
@@ -19,7 +23,7 @@ const router = createBrowserRouter([
     element: <Login/>
   },
   {
-    path: "/panel",
+    path: "/panel/:username",
     element: <Pannel/>
   },
 ])

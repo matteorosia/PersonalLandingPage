@@ -22,7 +22,7 @@ const pool = new Pool({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   port: process.env.DB_PORT || 5432, // PostgreSQL usa 5432
-  ssl: { rejectUnauthorized: false }
+  ssl: { rejectUnauthorized: true }
 });
 
 app.use(cors({
@@ -44,6 +44,18 @@ pool.connect((err) => {
   }
 });
 
+app.get("/getcountcontents/:user/:title", async (req, res) => {
+  const { user, title } = req.params;
+  const query = "SELECT COUNT(*) FROM contents WHERE title = $1 AND username = $2";
+
+  try {
+    const { rows } = await pool.query(query, [title, user]);
+    return res.json(rows);
+  } catch (err) {
+    return res.status(500).json(err);
+  }
+});
+
 app.get("/contents/:user/:title", async (req, res) => {
   const { user, title } = req.params;
   const query = "SELECT * FROM contents WHERE title = $1 AND username = $2";
@@ -51,6 +63,31 @@ app.get("/contents/:user/:title", async (req, res) => {
   try {
     const { rows } = await pool.query(query, [title, user]);
     return res.json(rows);
+  } catch (err) {
+    return res.status(500).json(err);
+  }
+});
+
+app.put("/contents/:user/:title", async (req, res) => {
+  const { user, title } = req.params;
+  const { content } = req.body;
+  const query = "UPDATE contents SET content = $1 WHERE title = $2 AND username = $3 RETURNING *;";
+
+  try {
+    const { rows } = await pool.query(query, [content, title, user]);
+    return res.json(rows);
+  } catch (err) {
+    return res.status(500).json(err);
+  }
+});
+
+app.post("/contents/", async (req, res) => {
+  const { title, content, username } = req.body;
+  const query = "INSERT INTO contents (title, content, username) VALUES ($1, $2, $3) RETURNING *;";
+
+  try {
+    const { rows } = await pool.query(query, [title, content, username]);
+    return res.status(201).json(rows[0]);
   } catch (err) {
     return res.status(500).json(err);
   }

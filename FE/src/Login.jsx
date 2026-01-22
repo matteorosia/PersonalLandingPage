@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 export default function Login(){
 
@@ -9,12 +10,12 @@ export default function Login(){
     const [message, setMessage] = useState("")
     const navigate = useNavigate()
 
-    async function handleLoginClick(e) {
+    function handleLoginClick(e) {
         e.preventDefault();
 
         try {
-            const res = await axios.get(`http://localhost:8800/username/${username}/${filePath}`);
-            console.log("Ok");
+           axios.get(`${import.meta.env.VITE_API_URL}$/login${username}/${password}`);
+            console.log(`${import.meta.env.VITE_API_URL}$/login${username}/${password}`);
         } catch (error) {
             console.log(error);
         }

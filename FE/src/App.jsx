@@ -88,6 +88,7 @@ export default function App() {
                 state={isMobile ? mobileMenuState : true}
                 onClick={handleClick}
                 toggleStatus = {toggleStatus}
+                username = {username}
               />
 
               {/* CodeSection visibile sempre su desktop, su mobile dipende da mobileMenuState */}

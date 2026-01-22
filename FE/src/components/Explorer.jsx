@@ -4,7 +4,7 @@ import { defaultPage, firstBorderColorDark, firstBorderColorLight } from "../uti
 import { firstBgColorDark, firstBgColorLight, transactionOption } from "../utils/Const";
 
 const items = [
-    { id: "Matteo_rosia", title: "Matteo Rosia", type: 0, tab: 0 },
+    { id: "Me", title: "Me", type: 0, tab: 0 },
     { id: "About_me", title: "About me", type: 0, tab: 1 },
     { id: "who_i_am", title: "Who_I_am.jsx", type: 1, tab: 2 },
     { id: "skills", title: "Skills", type: 0, tab: 1 },

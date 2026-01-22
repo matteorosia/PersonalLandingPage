@@ -1,20 +1,67 @@
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import * as c from "./utils/Const";
 import { useState, useEffect } from "react";
 import { RenderCodeContent } from "./utils/RenderCodeContent";
 import { RenderErrorContent } from "./utils/RenderErrorContent";
 import Caret from "./components/Caret";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 export default function Pannel() {
 
     const [selected, setOptionState] = useState(c.keys_option[0].id)
     const [content, setContent] = useState("");
+    const { username } = useParams(); 
     const navigate = useNavigate();
 
     function handleEventChange(e){
         setOptionState(e.target.value);
     }
+
+    function handleUpdate(e){
+        e.preventDefault();
+
+        axios.get(`${import.meta.env.VITE_API_URL}/getcountcontents/${username}/${selected}`)
+        .then(res => {
+            var esitoCount = res.data[0].count;
+
+            if (esitoCount == 0) {
+            // Non esiste 
+            axios.post(`${import.meta.env.VITE_API_URL}/contents`, {
+                title: selected,
+                username: username,
+                content: content
+            })
+            .then(res => { console.log("Record inserito:", res.data); })
+            .catch(err => { console.error("Errore POST:", err); });
+
+            } else {
+            // Esiste
+            axios.put(`${import.meta.env.VITE_API_URL}/contents/${username}/${selected}`, {
+                content: content
+            })
+            .then(res => { console.log("Aggiornato:", res.data); })
+            .catch(err => { console.error("Errore PUT:", err); });
+            }
+        })
+        .catch(err => { console.error("Errore GET:", err); });
+
+    }
+
+    useEffect(() => {
+    const fetchContent = async () => {
+      try{
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/contents/${username}/${selected}`);
+        setContent(res.data[0].content)
+      }
+      catch(error){
+        console.log(error)
+        setContent("")
+      }
+    }
+        fetchContent()
+    }, [selected]);
 
     return (
         <>
@@ -23,7 +70,7 @@ export default function Pannel() {
             <div className="relative w-full min-h-[80px] bg-neutral-800 border-b border-neutral-600 flex justify-center items-center">
                 <h1><span className="text-red-400 text-[30px]">PERSONAL CV IDE:</span><span className="text-white text-[30px]"> CONTROL PANEL</span></h1>
                 <h3 className="absolute right-5 text-white p-2 rounded-2xl text-[13px]">
-                    Hello Matteo!</h3>
+                    Hello {username}!</h3>
             </div>
 
            <div className="flex flex-col h-full justify-center items-center">
@@ -56,7 +103,7 @@ export default function Pannel() {
                         <div className={`px-[12px] m-4 border border-neutral-500 rounded-[4px] hover:bg-neutral-600 active:bg-neutral-800 active:border-neutral-800 ${c.transactionOption}`}>Go Back</div>
                     </Link>
                     <div className={`text-white cursor-pointer px-[12px] m-4 border border-neutral-500 rounded-[4px] hover:bg-neutral-600
-                         active:bg-neutral-800 active:border-neutral-800 ${c.transactionOption}`}
+                         active:bg-neutral-800 active:border-neutral-800 ${c.transactionOption}`} onClick={handleUpdate}
                         >Update
                     </div>
                 </div>
